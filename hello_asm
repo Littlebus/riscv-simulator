@@ -4,6 +4,7 @@ hello:     file format elf64-littleriscv
 
 Disassembly of section .text:
 
+
 0000000000010000 <_ftext>:
    10000:	00005197          	auipc	gp,0x5
    10004:	33018193          	addi	gp,gp,816 # 15330 <_gp>
