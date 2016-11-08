@@ -1,7 +1,7 @@
 #ifndef RISCV_H
 #define RISCV_H
 
-#define MEM			(1<<28)
+#define MEM		(1<<28)
 #define OPCODE(x)	(x&127)
 #define RD(x)		((x>>7)&31)
 #define RS1(x)		((x>>15)&31)

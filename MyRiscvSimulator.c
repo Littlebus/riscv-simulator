@@ -6,7 +6,6 @@
 int MODE = 0;
 FILE* fp_elf = NULL;
 
-
 int load_fromelf();
 int excv_program();
 int mode_debuger();
@@ -102,6 +101,7 @@ int load_fromelf()
 	}
 
 	PC = p_ehdr->e_entry;
+	i_reg[2] = MEM>>1;
 
 	return 0;
 }
@@ -206,9 +206,9 @@ int excv_program()
 		{
 			mode_debuger();
 		}
+							
+		instruction_execute( *(int*)(&mem[PC]) );		if(PC==0x10488)  printf("%llx  %lld\r\n", i_reg[1], *(long long*)&mem[i_reg[2]+40]);
 
-		instruction_execute( *(int*)(&mem[PC]) );
-		
 		if( PC==tmp_pc )
 		{
 			PC += 4;
@@ -221,7 +221,7 @@ int excv_program()
 
 int mode_debuger()
 {
-	
+	// while()
 }
 
 

@@ -202,11 +202,11 @@ void instruction_execute(int instruction)
 		{
 			//FLW
 		case 0b010:
-			d_reg[rd] = FMEM(mem + i_imm + rs1);
+			// d_reg[rd] = FMEM_32(mem + i_imm + rs1);
 			break;
 			//FLD
 		case 0b011:
-			d_reg[rd] = DMEM(mem + i_imm + rs1);
+			// pass();
 			break;
 		}
 		break;
